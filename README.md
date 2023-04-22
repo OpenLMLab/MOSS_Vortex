@@ -38,7 +38,7 @@ bash install_run.sh
 ## Test
 To run a test on Moss Vortex:  
 ```
-bash scripts/medium_vortex_test.sh
+bash scripts/test.sh
 ```  
 
 ## Interface
