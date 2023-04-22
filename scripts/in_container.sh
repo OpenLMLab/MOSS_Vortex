@@ -1,1 +1,0 @@
-docker exec -it mosec_fp16_with_past /bin/bash

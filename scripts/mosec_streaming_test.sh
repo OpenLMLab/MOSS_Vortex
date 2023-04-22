@@ -1,1 +1,0 @@
-python mosec_server.py --port 8000 --timeout 100000
