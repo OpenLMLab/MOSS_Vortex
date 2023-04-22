@@ -44,7 +44,7 @@ bash scripts/medium_vortex_test.sh
 ## Interface
 
 ```
-curl -X POST http://127.0.0.1:7003/inference -d \
+curl -X POST http://127.0.0.1:21333/inference -d \
 '{"x": "<|Human|>: hello<eoh>\n<|Inner thoughts|>: None.<eot>\n<|Commands|>: None<eoc>\n<|Results|>: None<eor>\n<|MOSS|>:", \  
 "max_iterations":"128", \  
 "temperature":"0.7", \
@@ -69,7 +69,7 @@ Return Format:
 ## Metrics
 To check the metrics:  
 ```
-http 127.0.0.1:7003/metrics
+http 127.0.0.1:21333/metrics
 ```
 
 Logs Format:
@@ -107,7 +107,7 @@ print(quick_sort([3, 6, 8, 10, 1, 2]))
 The following configurations are available for Moss Vortex:  
 - CUDA Version: 11.7  
 - GPU: 8 * A800 (Recommended)  
-- Default Batch Size: 16  
+- Default Batch Size: 8   
 - Default Wait Time for Batching: 10  
 - Default Infer Timeout: 70,000 ms  
 - Port: 7003 (used for Nginx)  
