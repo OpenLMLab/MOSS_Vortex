@@ -2,7 +2,7 @@
 name="moss_vortex"
 
 batch_size=8
-port=7003
+port=21333
 
 docker run -d --rm --name=${name} --privileged --cap-add=SYS_PTRACE --shm-size=500g \
 --gpus=all \

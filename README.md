@@ -31,13 +31,9 @@ To quickly deploy Moss Vortex using Docker:
 
 
 ```
-yum install git-lfs
-git lfs install
 git clone https://github.com/piglaker/vortex.git  
 cd Vortex  
-git clone https://huggingface.co/fnlp/fnlp/moss-moon-003-sft-plugin-int4 # download MOSS 003 from huggingface hub then modify the path in server.py
-bash install_run.sh  
-bash docker_run.sh    
+bash install_run.sh     
 ```
 ## Test
 To run a test on Moss Vortex:  

@@ -14,4 +14,8 @@ systemctl start docker
 docker login
 docker pull piglake/mosec:0.6
 
+yum install git-lfs
+git lfs install
+git clone https://huggingface.co/fnlp/fnlp/moss-moon-003-sft-plugin-int4 # download MOSS 003 from huggingface hub then modify the path in server.py
+
 bash docker_run.sh

@@ -18,37 +18,21 @@ import time
 import json
 import logging
 from typing import Any, List, Optional, Dict, Union, Tuple
-import pathlib
-import tempfile
-import threading
-import queue
 import json
 import time
 import traceback
 import statistics
-try:
-    import thread
-except ImportError:
-    import _thread as thread
-from multiprocessing import Process, Lock
 
 
 import numpy as np
-from prometheus_client import (  # type: ignore
-    CollectorRegistry,
-    Counter,
-    multiprocess,
-    start_http_server,
-)
+
 import torch  # type: ignore
 import onnxruntime as ort
 from transformers import (  # type: ignore
     AutoTokenizer, 
     PreTrainedTokenizer,
     AutoModelForCausalLM, 
-    AtuoForCausalLM, 
-    StoppingCriteriaList,
-    StoppingCriteria,
+    AutoModelForCausalLM, 
 )
 import websocket
 from websocket import create_connection
