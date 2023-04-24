@@ -363,7 +363,7 @@ class Inference(Worker):
             self.ort_session = ort.InferenceSession(self.model_path, ort.SessionOptions(),providers=['CUDAExecutionProvider', 'CPUExecutionProvider'])
         else:
             logger.info("[MOSEC] [INIT] PyTorch Loading")
-            self.model = AutoModelForCausalLM.from_pretrained(self.model_path, local_files_only=True).half()
+            self.model = AutoModelForCausalLM.from_pretrained(self.model_path, local_files_only=True).cuda()
             self.model.to(self.device)
 
         self.num_layers, self.heads, self.hidden, self.vocab_size = 34, 24, 256, 107008
