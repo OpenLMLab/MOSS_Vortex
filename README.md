@@ -110,7 +110,7 @@ The following configurations are available for Moss Vortex:
 - Default Batch Size: 8   
 - Default Wait Time for Batching: 10  
 - Default Infer Timeout: 70,000 ms  
-- Port: 7003 (used for Nginx)  
+- Port: 21333 (used for Nginx)  
 - Mosec Version: 0.6  
 
 
