@@ -36,7 +36,7 @@ cd Vortex
 bash install_run.sh     
 ```
 ## Test
-To run a test on Moss Vortex:  
+To run a test on MOSS Vortex:  
 ```
 bash scripts/test.sh
 ```  
