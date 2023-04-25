@@ -108,6 +108,9 @@ DEFAULT_PARAS = {
                 "prefix_length":len(PREFIX)
                 }
 
+MODEL_DIR = "fnlp/moss-moon-003-sft-plugin-int4"
+
+
 class My_WebSocket():
     def __init__(self, url) -> None:
         # streaming
@@ -187,7 +190,7 @@ class Preprocess(Worker):
 
     def __init__(self):
         super().__init__()
-        self.tokenizer = Local_Init_AutoTokenizer() 
+        self.tokenizer = Local_Init_AutoTokenizer(MODEL_DIR) 
         self.prefix = PREFIX
         self.prefix_length = len(self.prefix)
         self.prefix_token_length = len(self.tokenizer(self.prefix)["input_ids"])#for cut 
@@ -354,7 +357,8 @@ class Inference(Worker):
         logger.info("[MOSEC] [INIT] Initializing model on device=%s", self.gpu)
         self.device = (torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu"))
         logger.info("[MOSEC] [INIT] Using computing device: %s", self.device)
-        self.model_path = "fnlp/moss-moon-003-sft-plugin-int4"
+        self.model_path = MODEL_DIR
+
         self.tokenizer = Local_Init_AutoTokenizer(self.model_path)
         
         self.use_onnx = use_onnx
